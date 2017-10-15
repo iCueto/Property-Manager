@@ -4,11 +4,46 @@
     <title>PropertyManager</title>
     <%= csrf_meta_tags %>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <style>
+    .mdl-layout {
+      align-items: center;
+      justify-content: center;
+    }
+    </style>
+
   </head>
 
-  <body>
-    <%= yield %>
+  <body data-no-turbolink>
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-color--gray-100">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">Property Manager</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation. We hide it in small screens. -->
+          <nav class="mdl-navigation mdl-layout--large-screen-only">
+            <%= link_to 'Add a Property', new_property_path, class: "mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect mdl-color--white", method: :get %>
+            <a class="mdl-navigation__link" href="">Logout</a>
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Property Manager</span>
+        <nav class="mdl-navigation">
+          <%= link_to 'Create a New Property', new_property_path, class: "mdl-navigation__link", method: :get %>
+          <a class="mdl-navigation__link" href="">Logout</a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content">
+        <div class="page-content"><%= yield %></div>
+      </main>
+    </div>
   </body>
 </html>
