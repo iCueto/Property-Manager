@@ -1,0 +1,30 @@
+<h2>Listing Properties</h2>
+
+<ul class="demo-list-three mdl-list">
+  <% @properties.each do |property| %>
+  <li class="mdl-list__item mdl-list__item--three-line">
+    <span class="mdl-list__item-primary-content">
+      <span><%= property.name %></span>
+      <div class="mdl-list__item-text-body">
+        <!-- <%= truncate(property.description, lenght: 25) { link_to "view", property_path(property) }  %> -->
+        <%= property.address %>
+        <p>
+          <span class="mdl-chip">
+            <span class="mdl-chip__text">RD$<%= property.valuation %></span>
+          </span>
+
+          <span class="mdl-chip">
+            <span class="mdl-chip__text"><%= property.dimension %> M2</span>
+          </span>
+        </p>
+      </div>
+    </span>
+    <span class="mdl-list__item-secondary-content">
+      <span class="mdl-list__item-secondary-action">
+        <%= link_to material_icon.visibility, property_path(property) %>
+        <%= link_to material_icon.mode_edit, edit_property_path(property) %>
+      </span>
+    </span>
+  </li>
+  <% end %>
+</ul>
