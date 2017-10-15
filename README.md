@@ -1,24 +1,7 @@
-# README
+# Property Manager (ManaProper)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is just a simple CRUD for Manager Properties.
 
-Things you may want to cover:
+![view for create property](https://k60.kn3.net/7/E/0/D/E/A/ABA.png "View For Create Property")
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![view for create property](https://k60.kn3.net/A/1/C/1/9/2/E62.png] "A Single Property")
