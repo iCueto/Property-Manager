@@ -22,7 +22,7 @@
     <span class="mdl-list__item-secondary-content">
       <span class="mdl-list__item-secondary-action">
         <%= link_to material_icon.visibility, property_path(property) %>
-        <%= link_to material_icon.mode_edit, edit_property_path(property) %>
+        <%= link_to material_icon.mode_edit, edit_property_path(property), method: :get %>
       </span>
     </span>
   </li>
